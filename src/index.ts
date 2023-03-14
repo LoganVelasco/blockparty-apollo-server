@@ -3,34 +3,28 @@ import { startStandaloneServer } from '@apollo/server/standalone';
 
 const hints = [
   {
+    id: 0,
+    text: 'Tap Level builder to build a custom level of your own!',
+  },
+  {
     id: 1,
-    text: 'Try Level Builder',
+    text: 'Earn more stars to unlock harder difficulties',
   },
   {
      id: 2,
-     text: 'Disable hints in settings',
+     text: 'Tap the gear icon to apply a custom theme',
   },
   {
      id: 3,
-     text: 'New Hint',
+     text: 'More Levels coming soon!',
   },
   {
      id: 4,
-     text: 'Avoid the Enemy Block',
+     text: 'Tired of hints? Disable this window in settings',
   },
 ];
 
-const colors = [
-  {
-    id: 1,
-    colorId: 1,
-    hints: hints
-  },
-  {
-     id: 2,
-     colorId: 2,
-  },
-];
+
 
  const typeDefs = `#graphql
    type Hint {
@@ -38,23 +32,14 @@ const colors = [
      text: String
    }
 
-   type Color {
-     id: ID!
-     colorId: Int
-     hints: [Hint]
-   }
-
-
    type Query {
      hints: [Hint]
-     colors: [Color]
    }
  `;
 
  const resolvers = {
      Query: {
        hints: () => hints,
-       colors: () => colors,
      },
    };
 
