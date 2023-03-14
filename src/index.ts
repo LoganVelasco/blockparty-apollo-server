@@ -25,7 +25,6 @@ const hints = [
 ];
 
 
-
  const typeDefs = `#graphql
    type Hint {
      id: ID!
